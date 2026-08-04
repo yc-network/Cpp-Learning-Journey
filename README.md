@@ -1,2 +1,34 @@
 # Cpp-Learning-Journey
-My C++ learning journey, including basic syntax, STL, and small projects.
+
+记录我大学阶段学习 C++ 的过程。
+
+目前主要整理 C++ 基础知识、STL 使用以及一些练习项目。
+
+## 学习内容
+
+### C++基础
+
+- 基本语法
+- 函数
+- 指针
+- 引用
+- 结构体
+- 类
+
+### STL
+
+- string
+- vector
+- 常用函数练习
+
+### 项目
+
+- 学生成绩管理系统（计划中）
+
+## 开发环境
+
+- Visual Studio 2022
+
+## 说明
+
+这个仓库主要用于记录学习过程和代码整理。
