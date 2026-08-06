@@ -7,42 +7,42 @@ Student::Student(std::string name_, std::string id_, std::string sex_, int age_,
 void Student::printInfo()
 {
 	cout << "====================\n\n"
-		<< "Ñ§ÉúÐÕÃû£º" << name << '\n'
-		<< "Ñ§ºÅ£º" << id << '\n'
-		<< "ÐÔ±ð£º" << sex << '\n'
-		<< "ÄêÁä£º" << age << "\n\n"
+		<< "å­¦ç”Ÿå§“åï¼š" << name << '\n'
+		<< "å­¦å·ï¼š" << id << '\n'
+		<< "æ€§åˆ«ï¼š" << sex << '\n'
+		<< "å¹´é¾„ï¼š" << age << "\n\n"
 
-		<< "ÊýÑ§³É¼¨£º" << MathScores << '\n'
-		<< "ÓïÎÄ³É¼¨£º" << ChineseScores << '\n'
-		<< "Ó¢Óï³É¼¨£º" << EnglishScores << "\n\n"
+		<< "æ•°å­¦æˆç»©ï¼š" << MathScores << '\n'
+		<< "è¯­æ–‡æˆç»©ï¼š" << ChineseScores << '\n'
+		<< "è‹±è¯­æˆç»©ï¼š" << EnglishScores << "\n\n"
 
-		<< "¸ÃÑ§ÉúÆ½¾ù·Ö£º" << getAverage() << "\n\n"
-		<< "¸ÃÑ§ÉúÆ½¾ù·ÖµÈ¼¶£º" << getTotalLevel() << "\n\n"
+		<< "è¯¥å­¦ç”Ÿå¹³å‡åˆ†ï¼š" << getAverage() << "\n\n"
+		<< "è¯¥å­¦ç”Ÿå¹³å‡åˆ†ç­‰çº§ï¼š" << getTotalLevel() << "\n\n"
 		<< "====================" << endl;
 }
 
 void Student::setAge(int age) {
 	int tage = this->age;
 	this->age = age;
-	cout << "ÒÑ³É¹¦½«Ñ§ÉúÄêÁä´Ó" << tage << "ÐÞ¸ÄÎª" << this->age << endl;
+	cout << "å·²æˆåŠŸå°†å­¦ç”Ÿå¹´é¾„ä»Ž" << tage << "ä¿®æ”¹ä¸º" << this->age << endl;
 }
 
 void Student::setMScore(double Mscores) {
 	double tMSores = this->MathScores;
 	this->MathScores = Mscores;
-	cout << "ÒÑ³É¹¦½«Ñ§ÉúÊýÑ§³É¼¨´Ó" << tMSores << "ÐÞ¸ÄÎª" << this->MathScores << endl;
+	cout << "å·²æˆåŠŸå°†å­¦ç”Ÿæ•°å­¦æˆç»©ä»Ž" << tMSores << "ä¿®æ”¹ä¸º" << this->MathScores << endl;
 }
 
 void Student::setCScore(double Cscores) {
 	double tCSores = this->ChineseScores;
 	this->ChineseScores = Cscores;
-	cout << "ÒÑ³É¹¦½«Ñ§ÉúÖÐÎÄ³É¼¨´Ó" << tCSores << "ÐÞ¸ÄÎª" << this->ChineseScores << endl;
+	cout << "å·²æˆåŠŸå°†å­¦ç”Ÿä¸­æ–‡æˆç»©ä»Ž" << tCSores << "ä¿®æ”¹ä¸º" << this->ChineseScores << endl;
 }
 
 void Student::setEScore(double Escores) {
 	double tESores = this->EnglishScores;
 	this->EnglishScores = Escores;
-	cout << "ÒÑ³É¹¦½«Ñ§ÉúÓ¢Óï³É¼¨´Ó" << tESores << "ÐÞ¸ÄÎª" << this->EnglishScores << endl;
+	cout << "å·²æˆåŠŸå°†å­¦ç”Ÿè‹±è¯­æˆç»©ä»Ž" << tESores << "ä¿®æ”¹ä¸º" << this->EnglishScores << endl;
 }
 
 double Student::getAverage() const {
