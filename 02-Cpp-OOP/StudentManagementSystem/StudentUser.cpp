@@ -7,7 +7,7 @@ using namespace std;
 void StudentUser::getStudent() {
 	string id_;
 	while (true) {
-		cout << "ÇëÊäÈëÄúÏëÒª²éÑ¯µÄÑ§ÉúÑ§ºÅ£º£¨ÍË³öÇëÊäÈë-1£©" << endl;
+		cout << "è¯·è¾“å…¥æ‚¨æƒ³è¦æŸ¥è¯¢çš„å­¦ç”Ÿå­¦å·ï¼šï¼ˆé€€å‡ºè¯·è¾“å…¥-1ï¼‰" << endl;
 		cin >> id_;
 		if (id_ == "-1") break;
 		Student* s = manager.findStudent(id_);
