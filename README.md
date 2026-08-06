@@ -1,80 +1,58 @@
-# StudentManagementSystem
+# Cpp-Learning-Journey
 
-## 项目简介
+我的 C++ 学习记录仓库。
 
-这是一个基于 C++ 面向对象思想开发的学生管理系统练习项目。
+记录大学阶段 C++ 学习过程，包括：
 
-主要用于学习：
+- C++基础
+- 面向对象编程
+- STL
+- 数据结构
+- 项目实践
+
+
+## Projects
+
+
+## StudentManagementSystem
+
+路径：
+
+02-Cpp-OOP/StudentManagementSystem
+
+
+这是一个 C++ 面向对象练习项目。
+
+主要学习：
 
 - 类与对象
-- C++ 多文件工程结构
-- 封装思想
-- vector容器管理对象
-- 类之间的协作
+- 封装
+- 构造函数
+- 初始化列表
+- this 指针
+- 多文件工程结构
+- vector 容器
 
 
-## 项目结构
+目前实现功能：
 
-StudentManagementSystem
-
-├── Student.h
-
-├── Student.cpp
-
-├── StudentManager.h
-
-├── StudentManager.cpp
-
-├── StudentUser.h
-
-├── StudentUser.cpp
-
-└── main.cpp
-
-
-## 已实现功能
-
-### Student类
-
-负责保存学生信息：
-
-- 姓名
-- 学号
-- 性别
-- 年龄
-- 各科成绩
-
-
-实现：
-
+- 添加学生信息
+- 删除学生信息
+- 查询学生信息
 - 输出学生信息
-- 计算平均分
-- 判断成绩等级
-- 修改学生信息
 
 
-### StudentManager类
+后续计划：
 
-负责管理学生对象：
-
-- 添加学生
-- 删除学生
-- 查询学生
-- 修改学生信息
-- 检查重复学号
+- 学生成绩排序
+- 文件保存
+- 数据读取
+- 完善用户系统
 
 
-### StudentUser类
+## Learning Log
 
-实现：
+学习记录：
 
-- 根据学号查询学生信息
-
-
-## 后续计划
-
-- 完善查询功能
-- 增加学生成绩排序
-- 学习STL算法
-- 增加文件保存功能
-- 完善用户权限系统
+- 2026-08-05
+- 2026-08-06
