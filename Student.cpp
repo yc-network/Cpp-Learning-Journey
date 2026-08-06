@@ -17,7 +17,7 @@ void Student::printInfo()
 		<< "英语成绩：" << EnglishScores << "\n\n"
 
 		<< "该学生平均分：" << getAverage() << "\n\n"
-		<< "等级：" << getLevel() << "\n\n"
+		<< "该学生平均分等级：" << getTotalLevel() << "\n\n"
 		<< "====================" << endl;
 }
 
@@ -45,14 +45,34 @@ void Student::setEScore(double Escores) {
 	cout << "已成功将学生英语成绩从" << tESores << "修改为" << this->EnglishScores << endl;
 }
 
-double Student::getAverage() {
+double Student::getAverage() const {
 	return (MathScores + ChineseScores + EnglishScores) / 3 ;
 }
 
-char Student::getLevel() {
+char Student::getTotalLevel() {
 	if (getAverage() >= 90 && getAverage() <= 100) return 'A';
 	else if (getAverage() < 90 && getAverage() >= 80) return 'B';
 	else if (getAverage() < 80 && getAverage() >= 70) return 'C';
 	else if (getAverage() < 70 && getAverage() >= 60) return 'D';
 	else return 'F';
+}
+
+std::string Student::getid() const {
+	return id;
+}
+
+double Student::getMScores() const {
+	return MathScores;
+}
+
+double Student::getEScores() const {
+	return EnglishScores;
+}
+
+double Student::getCScores() const {
+	return ChineseScores;
+}
+
+int Student::getAge() const {
+	return age;
 }

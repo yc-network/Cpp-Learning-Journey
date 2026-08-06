@@ -8,7 +8,7 @@ private:
 	std::string sex;
 	int age = 0;
 	double MathScores=0.0;
-	double ChineseScores = 0.0;
+	double ChineseScores = 0.0;	
 	double EnglishScores = 0.0;
 public:
 	Student(std::string name_, std::string id_, std::string sex_, int age_, double Mscores_, double Cscores_, double Escores_);
@@ -17,6 +17,11 @@ public:
 	void setMScore(double Mscores);
 	void setCScore(double Cscores);
 	void setEScore(double Escores);
-	double getAverage();
-	char getLevel();
+	double getAverage() const ;
+	char getTotalLevel();
+	std::string getid() const;
+	double getCScores() const;
+	double getMScores() const;
+	double getEScores() const;
+	int  getAge() const;
 };
