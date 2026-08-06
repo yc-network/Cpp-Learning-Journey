@@ -15,7 +15,7 @@ void StudentManager::addStudent() {
 		double MathScores = 0.0;
 		double ChineseScores = 0.0;
 		double EnglishScores = 0.0;
-		cout << "ÇëÊäÈëÑ§ÉúÑ§ºÅ£º(ÍË³öÇëÊäÈë-1£©";
+		cout << "è¯·è¾“å…¥å­¦ç”Ÿå­¦å·ï¼š(é€€å‡ºè¯·è¾“å…¥-1ï¼‰";
 		cin >> id;
 		if (id == "-1") {
 			break;
@@ -23,17 +23,17 @@ void StudentManager::addStudent() {
 		
 		if (StudentManager::checkid(id))  continue;
 
-		cout << "ÇëÊäÈëÑ§ÉúÐÕÃû£º";
+		cout << "è¯·è¾“å…¥å­¦ç”Ÿå§“åï¼š";
 		cin >> name;
-		cout << "ÇëÊäÈëÑ§ÉúÐÔ±ð£º";
+		cout << "è¯·è¾“å…¥å­¦ç”Ÿæ€§åˆ«ï¼š";
 		cin >> sex;
-		cout << "ÇëÊäÈëÑ§ÉúÄêÁä£º";
+		cout << "è¯·è¾“å…¥å­¦ç”Ÿå¹´é¾„ï¼š";
 		cin >> age;
-		cout << "ÇëÊäÈëÑ§ÉúµÄÊýÑ§³É¼¨£º";
+		cout << "è¯·è¾“å…¥å­¦ç”Ÿçš„æ•°å­¦æˆç»©ï¼š";
 		cin >> MathScores;
-		cout << "ÇëÊäÈëÑ§ÉúÖÐÎÄ³É¼¨£º";
+		cout << "è¯·è¾“å…¥å­¦ç”Ÿä¸­æ–‡æˆç»©ï¼š";
 		cin >> ChineseScores;
-		cout << "ÇëÊäÈëÑ§ÉúÓ¢Óï³É¼¨£º";
+		cout << "è¯·è¾“å…¥å­¦ç”Ÿè‹±è¯­æˆç»©ï¼š";
 		cin >> EnglishScores;
 
 		Student student{
@@ -42,14 +42,14 @@ void StudentManager::addStudent() {
 
 		students.push_back(student);
 
-		cout << "ÒÑ³É¹¦Ìí¼ÓÑ§Éú" << name << "¡£µ±Ç°¹²ÓÐ" << students.size() << "ÃûÑ§Éú¡£" << endl;
+		cout << "å·²æˆåŠŸæ·»åŠ å­¦ç”Ÿ" << name << "ã€‚å½“å‰å…±æœ‰" << students.size() << "åå­¦ç”Ÿã€‚" << endl;
 	}
 }
 
 
 void StudentManager::deleteStudent() {
 	while (true) {
-		cout << "ÇëÊäÈë½«ÒªÉ¾³ýÑ§ÉúµÄÑ§ºÅ£º£¨ÍË³öÇëÊäÈë-1£©";
+		cout << "è¯·è¾“å…¥å°†è¦åˆ é™¤å­¦ç”Ÿçš„å­¦å·ï¼šï¼ˆé€€å‡ºè¯·è¾“å…¥-1ï¼‰";
 		std::string id_;
 		cin >> id_;
 		if (id_ == "-1") {
@@ -66,17 +66,17 @@ void StudentManager::deleteStudent() {
 			}
 		}
 		if (found == false) {
-			cout << "Î´ÕÒµ½¸ÃÑ§Éú ÇëÊäÈëÕýÈ·µÄÑ§ºÅ£¡" << endl;
+			cout << "æœªæ‰¾åˆ°è¯¥å­¦ç”Ÿ è¯·è¾“å…¥æ­£ç¡®çš„å­¦å·ï¼" << endl;
 		}
 		else {
-			cout << "ÒÑÕÒµ½¸ÃÑ§Éú²¢ÇÒÉ¾³ý¡£" << endl;
+			cout << "å·²æ‰¾åˆ°è¯¥å­¦ç”Ÿå¹¶ä¸”åˆ é™¤ã€‚" << endl;
 		}
 	}
 }
 
 void StudentManager::print() {
 	if (students.size() == 0) {
-		cout << "µ±Ç°Ñ§ÉúÊýÁ¿Îª0£¡" << endl;
+		cout << "å½“å‰å­¦ç”Ÿæ•°é‡ä¸º0ï¼" << endl;
 		return;
 	}
 	for (std::size_t i = 0; i < students.size(); i++) {
@@ -87,7 +87,7 @@ void StudentManager::print() {
 bool StudentManager::checkid(string &id) const {
 	for (std::size_t i = 0; i < students.size();i++) {
 		if (students[i].getid() == id) {
-			cout << "¸ÃÑ§ÉúÒÑ´æÔÚ£¡ÇëÖØÐÂÊäÈë£¡" << endl;
+			cout << "è¯¥å­¦ç”Ÿå·²å­˜åœ¨ï¼è¯·é‡æ–°è¾“å…¥ï¼" << endl;
 			return true;
 		}
 	}
@@ -97,45 +97,45 @@ bool StudentManager::checkid(string &id) const {
 void StudentManager::modifyStudent() {
 	while (true) {
 		int x = 0;
-		cout << "ÊäÈë1ÐÞ¸ÄÑ§ÉúÄêÁä ÊäÈë2ÐÞ¸ÄÊýÑ§³É¼¨ ÊäÈë3ÐÞ¸ÄÖÐÎÄ³É¼¨ ÊäÈë4ÐÞ¸ÄÓ¢ÎÄ³É¼¨£º£¨ÍË³öÇëÊäÈë-1£©";
+		cout << "è¾“å…¥1ä¿®æ”¹å­¦ç”Ÿå¹´é¾„ è¾“å…¥2ä¿®æ”¹æ•°å­¦æˆç»© è¾“å…¥3ä¿®æ”¹ä¸­æ–‡æˆç»© è¾“å…¥4ä¿®æ”¹è‹±æ–‡æˆç»©ï¼šï¼ˆé€€å‡ºè¯·è¾“å…¥-1ï¼‰";
 		cin >> x;
 		if (x == -1) break;
 		string id_;
-		cout << "ÇëÊäÈëÄúÏëÒªÐÞ¸ÄµÄÑ§ÉúµÄÑ§ºÅ£º";
+		cout << "è¯·è¾“å…¥æ‚¨æƒ³è¦ä¿®æ”¹çš„å­¦ç”Ÿçš„å­¦å·ï¼š";
 		cin >> id_;
 		for (std::size_t i = 0; i < students.size(); i++) {
 			if (students[i].getid() == id_){
 				if (x == 1) {
 					int tage = 0;
-					cout << "µ±Ç°Ñ§ÉúÄêÁäÎª£º" << students[i].getAge() << " ½«¸ÃÑ§ÉúµÄÄêÁäÐÞ¸ÄÎª£º";
+					cout << "å½“å‰å­¦ç”Ÿå¹´é¾„ä¸ºï¼š" << students[i].getAge() << " å°†è¯¥å­¦ç”Ÿçš„å¹´é¾„ä¿®æ”¹ä¸ºï¼š";
 					cin >> tage;
 					students[i].setAge(tage);
 				}
 				else if (x == 2) {
 					double tMS = 0.0;
-					cout << "µ±Ç°Ñ§ÉúÊýÑ§³É¼¨Îª£º" << students[i].getMScores() << " ½«¸ÃÑ§ÉúµÄÊýÑ§³É¼¨ÐÞ¸ÄÎª£º";
+					cout << "å½“å‰å­¦ç”Ÿæ•°å­¦æˆç»©ä¸ºï¼š" << students[i].getMScores() << " å°†è¯¥å­¦ç”Ÿçš„æ•°å­¦æˆç»©ä¿®æ”¹ä¸ºï¼š";
 					cin >> tMS;
 					students[i].setMScore(tMS);
 				}
 				else if (x == 3) {
 					double tCS = 0.0;
-					cout << "µ±Ç°Ñ§ÉúÖÐÎÄ³É¼¨Îª£º" << students[i].getCScores() << " ½«¸ÃÑ§ÉúµÄÖÐÎÄ³É¼¨ÐÞ¸ÄÎª£º";
+					cout << "å½“å‰å­¦ç”Ÿä¸­æ–‡æˆç»©ä¸ºï¼š" << students[i].getCScores() << " å°†è¯¥å­¦ç”Ÿçš„ä¸­æ–‡æˆç»©ä¿®æ”¹ä¸ºï¼š";
 					cin >> tCS;
 					students[i].setCScore(tCS);
 				}
 				else if (x == 4) {
 					double tES = 0.0;
-					cout << "µ±Ç°Ñ§ÉúÓ¢Óï³É¼¨Îª£º" << students[i].getEScores() << " ½«¸ÃÑ§ÉúµÄÓ¢Óï³É¼¨ÐÞ¸ÄÎª£º";
+					cout << "å½“å‰å­¦ç”Ÿè‹±è¯­æˆç»©ä¸ºï¼š" << students[i].getEScores() << " å°†è¯¥å­¦ç”Ÿçš„è‹±è¯­æˆç»©ä¿®æ”¹ä¸ºï¼š";
 					cin >> tES;
 					students[i].setEScore(tES);
 				}
 				else {
-					cout << "ÇëÊäÈëÕýÈ·µÄÊý×Ö£¡" << endl;
+					cout << "è¯·è¾“å…¥æ­£ç¡®çš„æ•°å­—ï¼" << endl;
 					continue;
 				}
 			}
 			else {
-				cout << "ÇëÊäÈëÕýÈ·µÄÑ§ºÅ£¡" << endl;
+				cout << "è¯·è¾“å…¥æ­£ç¡®çš„å­¦å·ï¼" << endl;
 				continue;
 			}
 		}
@@ -147,7 +147,7 @@ Student* StudentManager::findStudent(std::string id_) {
 	for (std::size_t i = 0; i < students.size(); i++) {
 		if (students[i].getid() == id_) return &students[i];
 	}
-	cout << "ÇëÊäÈëÕýÈ·µÄÑ§ºÅ£¡";
+	cout << "è¯·è¾“å…¥æ­£ç¡®çš„å­¦å·ï¼";
 	return nullptr;
 }
 /*double StudentManager::getEAverage()
@@ -181,8 +181,8 @@ void StudentManager::getEachLevel()//To get total level of one student in the wh
 {
 	std::string subject;
 	std::string id;
-	cout << "ÇëÊäÈëÏëÒª²éÑ¯µÄÑ§ÉúÑ§ºÅ£º";
+	cout << "è¯·è¾“å…¥æƒ³è¦æŸ¥è¯¢çš„å­¦ç”Ÿå­¦å·ï¼š";
 	getline(cin, id);
-	cout << "ÇëÊäÈëÏëÒª²éÑ¯µÄ¿ÆÄ¿£º";
+	cout << "è¯·è¾“å…¥æƒ³è¦æŸ¥è¯¢çš„ç§‘ç›®ï¼š";
 	getline(cin, id);
 }*/
