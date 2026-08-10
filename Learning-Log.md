@@ -82,3 +82,38 @@ Learning-Log.md
 培养代码习惯
 积累项目经验
 以后会随着学习继续完善已有项目，并尝试新的项目。
+
+
+##每日学习记录
+
+###2026/8/10
+
+今日学习内容：
+在学生管理系统中增加了成绩排序功能
+复习了运算符重载
+
+####运算符重载
+
+1、普通二元运算符重载
+eg:+ - * / % ^ & | ~
+const T operatorX(const T& 1,const &T 2) const
+
+2、比较运算符
+eg:! && || < <= == >= >
+bool operator(const T& 1,const T& 2) const
+
+3、下标运算符[]
+
+T& T::operator[](int index)
+
+4、赋值运算符
+
+T& T::operator=(const T& rhs)
+{
+    if(this != &rhs)
+    {
+        // perform assignment
+    }
+
+    return *this;
+}
