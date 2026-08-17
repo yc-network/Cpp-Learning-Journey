@@ -2,5 +2,26 @@
 Debug/
 Release/
 x64/
+
 *.exe
 *.obj
+
+
+# Qt Creator
+*.user
+*.user.*
+*.qtcsettings
+.qtcreator/
+
+
+# CMake build files
+build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+
+
+# Qt generated files
+Makefile
+*.qmake.stash
+*.pro.user.*
