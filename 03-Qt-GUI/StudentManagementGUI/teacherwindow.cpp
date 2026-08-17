@@ -6,12 +6,15 @@
 #include "chanstu.h"
 #include <QCloseEvent>
 #include <QMessageBox>
+#include <fstream>
 
 TeacherWindow::TeacherWindow(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::TeacherWindow)
 {
     ui->setupUi(this);
+    std::fstream file;
+    manager.load(file);
 }
 
 TeacherWindow::~TeacherWindow()
