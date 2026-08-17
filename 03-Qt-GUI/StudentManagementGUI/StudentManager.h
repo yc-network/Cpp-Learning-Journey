@@ -1,0 +1,22 @@
+#pragma once
+#include <algorithm>
+#include <vector>
+#include <fstream>
+#include "Student.h"
+class StudentManager {
+private:
+	std::vector<Student> students;
+public:
+	StudentManager();
+	void addStudent();
+	void deleteStudent();
+	void print();
+	bool checkid(std::string &id) const ;
+	void modifyStudent();
+	Student* findStudent(std::string id_);
+	void load(std::fstream& f);
+	void save(std::fstream& f);
+	bool compare(Student students1, Student students2);
+	void compareScores();
+    void AddStudent(const Student& s)  ;
+};
