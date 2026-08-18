@@ -14,10 +14,13 @@ private:
 public:
 	Student(std::string name_, std::string id_, std::string sex_, int age_, double Mscores_, double Cscores_, double Escores_);
 	void printInfo();
+    void setName(std::string name);
+    void setId(std::string id);
 	void setAge(int age);
 	void setMScore(double Mscores);
 	void setCScore(double Cscores);
 	void setEScore(double Escores);
+    void setSex(std::string sex);
 	double getAverage() const ;//获取学生所有科目的平均分
 	char getTotalLevel();//获得学生平均分所处在的等级
 	std::string getid() const;

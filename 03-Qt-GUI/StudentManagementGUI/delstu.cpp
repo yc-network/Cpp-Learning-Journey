@@ -1,11 +1,13 @@
 #include "delstu.h"
 #include "ui_delstu.h"
 #include "teacherwindow.h"
+#include "StudentManager.h"
 #include <QMessageBox>
 #include <QCloseEvent>
+#include <fstream>
 
-DelStu::DelStu(TeacherWindow* t,QWidget *parent)
-    : teacherWindow(t), QWidget(parent)
+DelStu::DelStu(StudentManager *m,TeacherWindow* t,QWidget *parent)
+    : manager(m),teacherWindow(t), QWidget(parent)
     , ui(new Ui::DelStu)
 {
     ui->setupUi(this);
@@ -38,5 +40,25 @@ void DelStu::on_pushButton_clicked()
         teacherWindow->show();
         deleteLater();
     }
+}
+
+
+void DelStu::on_Ensure_clicked()
+{
+    QString qid=ui->InputeId->text().trimmed();
+    if(qid.isEmpty()){
+        QMessageBox::warning(this,"警告","学号不能为空!");
+        return;
+    }
+    auto id=qid.toStdString();
+    if(!manager->deleteStudent(id)){
+        QMessageBox::warning(this,"警告","该学生不存在！");
+        return;
+    }
+
+    std::fstream file;
+    manager->save(file);
+    ui->InputeId->clear();
+    QMessageBox::information(this,"提示","删除成功");
 }
 

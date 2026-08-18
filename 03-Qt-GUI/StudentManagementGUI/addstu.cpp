@@ -63,24 +63,10 @@ void AddStu::on_Ensure_clicked()
     double E=ui->InputeE->text().toDouble(&Eok);
     if(qname.isEmpty()||qid.isEmpty()){
         QMessageBox::warning(this,"警告","姓名和学号不能为空！");
-        ui->InputeName->clear();
-        ui->InputeId->clear();
-        ui->InputeAge->clear();
-        ui->InputeM->clear();
-        ui->InputeC->clear();
-        ui->InputeE->clear();
-        ui->comboBox->setCurrentIndex(0);
         return;
     }
     if(!ageok||!Mok||!Cok||!Eok){
         QMessageBox::warning(this,"警告","年龄、成绩必须为数字！");
-        ui->InputeName->clear();
-        ui->InputeId->clear();
-        ui->InputeAge->clear();
-        ui->InputeM->clear();
-        ui->InputeC->clear();
-        ui->InputeE->clear();
-        ui->comboBox->setCurrentIndex(0);
         return;
     }
     auto name=qname.toStdString();
@@ -88,13 +74,6 @@ void AddStu::on_Ensure_clicked()
     auto id=qid.toStdString();
     if(manager->checkid(id)){
         QMessageBox::warning(this,"警告","该学生已存在 请检查学号是否正确");
-        ui->InputeName->clear();
-        ui->InputeId->clear();
-        ui->InputeAge->clear();
-        ui->InputeM->clear();
-        ui->InputeC->clear();
-        ui->InputeE->clear();
-        ui->comboBox->setCurrentIndex(0);
         return;
     }
     Student s(name,id,sex,age,M,C,E);

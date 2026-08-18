@@ -8,13 +8,12 @@
 #include <QMessageBox>
 #include <fstream>
 
-TeacherWindow::TeacherWindow(QWidget *parent)
+TeacherWindow::TeacherWindow(StudentManager* manager, QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::TeacherWindow)
+    , manager(manager)
 {
     ui->setupUi(this);
-    std::fstream file;
-    manager.load(file);
 }
 
 TeacherWindow::~TeacherWindow()
@@ -34,7 +33,7 @@ void TeacherWindow::closeEvent(QCloseEvent* event){
 }
 void TeacherWindow::on_Addstu_clicked()
 {
-    AddStu* teA=new AddStu(&manager,this);
+    AddStu* teA=new AddStu(manager,this);
     teA->show();
     this->hide();
 }
@@ -42,7 +41,7 @@ void TeacherWindow::on_Addstu_clicked()
 
 void TeacherWindow::on_Delstu_clicked()
 {
-    DelStu* teD=new DelStu(this);
+    DelStu* teD=new DelStu(manager,this);
     teD->show();
     this->hide();
 }
@@ -50,7 +49,7 @@ void TeacherWindow::on_Delstu_clicked()
 
 void TeacherWindow::on_Showstu_clicked()
 {
-    ShowStu* teS=new ShowStu();
+    ShowStu* teS=new ShowStu(manager,this);
     teS->show();
     this->hide();
 }
@@ -58,7 +57,7 @@ void TeacherWindow::on_Showstu_clicked()
 
 void TeacherWindow::on_Chanstu_clicked()
 {
-    ChanStu* teC=new ChanStu(this);
+    ChanStu* teC=new ChanStu(manager,this);
     teC->show();
     this->hide();
 }

@@ -44,6 +44,17 @@ void Student::setEScore(double Escores) {
 	this->EnglishScores = Escores;
 	cout << "已成功将学生英语成绩从" << tESores << "修改为" << this->EnglishScores << endl;
 }
+void Student::setName(std::string name){
+    this->name=name;
+}
+
+void Student::setId(std::string id){
+    this->id=id;
+}
+
+void Student::setSex(std::string sex){
+    this->sex=sex;
+}
 
 double Student::getAverage() const {
 	return (MathScores + ChineseScores + EnglishScores) / 3 ;

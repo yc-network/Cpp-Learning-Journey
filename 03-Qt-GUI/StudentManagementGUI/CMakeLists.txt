@@ -22,6 +22,7 @@ Student.h
 StudentManager.cpp
 StudentManager.h
 chanstu.h chanstu.cpp chanstu.ui
+stu.h stu.cpp stu.ui
 )
 
 target_link_libraries(StudentManagementGUI

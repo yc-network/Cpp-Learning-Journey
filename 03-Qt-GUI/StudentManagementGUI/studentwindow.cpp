@@ -1,11 +1,12 @@
 #include "studentwindow.h"
 #include "studentdata.h"
 #include "ui_studentwindow.h"
+#include "StudentManager.h"
 #include <QMessageBox>
 #include <QCloseEvent>
 
-StudentWindow::StudentWindow(QWidget *parent)
-    : QWidget(parent)
+StudentWindow::StudentWindow(StudentManager *m,QWidget *parent)
+    : manager(m),QWidget(parent)
     , ui(new Ui::StudentWindow)
 {
     ui->setupUi(this);
@@ -28,14 +29,20 @@ void StudentWindow::closeEvent(QCloseEvent *event){
 
 void StudentWindow::on_Ensure_clicked()
 {
-    QString StuId=ui->InputeAccount->text();
-    if(StuId=="1"){
-        StudentData* stuD=new StudentData();
-        stuD->show();
-        this->hide();
+    QString qid=ui->InputeAccount->text().trimmed();
+    auto id=qid.toStdString();
+    if(manager == nullptr){
+        QMessageBox::warning(this,"错误","学生数据不可用！");
+        return;
     }
-    else{
+
+    Student* student=manager->findStudent(id);
+    if(student == nullptr){
         QMessageBox::warning(this,"警告","请检查学号是否错误");
+        return;
     }
+    StudentData* stuD=new StudentData(student,this);
+    stuD->show();
+    this->hide();
 }
 

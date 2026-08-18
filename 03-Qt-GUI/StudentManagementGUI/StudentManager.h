@@ -9,14 +9,15 @@ private:
 public:
 	StudentManager();
 	void addStudent();
-	void deleteStudent();
+    bool deleteStudent(const std::string &id);
 	void print();
-	bool checkid(std::string &id) const ;
+    bool checkid(const std::string &id) const ;
 	void modifyStudent();
-	Student* findStudent(std::string id_);
+    Student* findStudent(const std::string id_);
 	void load(std::fstream& f);
 	void save(std::fstream& f);
 	bool compare(Student students1, Student students2);
 	void compareScores();
     void AddStudent(const Student& s)  ;
+    const std::vector<Student>& getStudents() const;
 };

@@ -49,31 +49,16 @@ void StudentManager::addStudent() {
 }
 
 
-void StudentManager::deleteStudent() {
-	while (true) {
-		cout << "请输入将要删除学生的学号：（退出请输入-1）";
-		std::string id_;
-		cin >> id_;
-		if (id_ == "-1") {
-			break;
-		}
-		bool found = false;
-		for (std::size_t i = 0; i < students.size(); i++) 
-		{
-			if (students[i].getid() == id_) 
-			{
-				students.erase(students.begin() + i);
-				found = true;
-				break;
-			}
-		}
-		if (found == false) {
-			cout << "未找到该学生 请输入正确的学号！" << endl;
-		}
-		else {
-			cout << "已找到该学生并且删除。" << endl;
-		}
-	}
+bool StudentManager::deleteStudent(const std::string &id) {
+    for (std::size_t i = 0; i < students.size(); i++)
+    {
+        if (students[i].getid() == id)
+        {
+            students.erase(students.begin() + i);
+            return true;
+        }
+    }
+    return false;
 }
 
 void StudentManager::print() {
@@ -86,10 +71,9 @@ void StudentManager::print() {
 	}
 }
 
-bool StudentManager::checkid(string &id) const {
+bool StudentManager::checkid(const string &id) const {
 	for (std::size_t i = 0; i < students.size();i++) {
 		if (students[i].getid() == id) {
-			cout << "该学生已存在！请重新输入！" << endl;
 			return true;
 		}
 	}
@@ -145,13 +129,17 @@ void StudentManager::modifyStudent() {
 	}
 }
 
-Student* StudentManager::findStudent(std::string id_) {
-	for (std::size_t i = 0; i < students.size(); i++) {
-		if (students[i].getid() == id_) return &students[i];
-	}
-	cout << "请输入正确的学号！"<<endl;
-	return nullptr;
+Student* StudentManager::findStudent(const std::string id_) {
+
+        for (auto& student : students) {
+            if (student.getid() == id_) {
+                return &student;
+            }
+        }
+
+        return nullptr;
 }
+
 
 
 void StudentManager::save(fstream& f) {
@@ -204,6 +192,10 @@ void StudentManager::load(std::fstream& f)
 
 void StudentManager::AddStudent(const Student& s) {
     students.push_back(s);
+}
+
+const std::vector<Student>&  StudentManager::getStudents() const{
+    return students;
 }
 /*double StudentManager::getEAverage()
 {

@@ -13,12 +13,12 @@ class TeacherWindow : public QWidget
     Q_OBJECT
 
 public:
-    explicit TeacherWindow(QWidget *parent = nullptr);
+    explicit TeacherWindow(StudentManager* manager, QWidget *parent = nullptr);
     ~TeacherWindow();
 
 private:
     Ui::TeacherWindow *ui;
-    StudentManager manager;
+    StudentManager *manager;
 
 protected:
     void closeEvent(QCloseEvent* event) override;

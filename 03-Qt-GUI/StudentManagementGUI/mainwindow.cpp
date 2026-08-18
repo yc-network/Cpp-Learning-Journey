@@ -5,12 +5,16 @@
 #include <QMessageBox>
 #include <QCloseEvent>
 #include <QLineEdit>
+#include <fstream>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    std::fstream file;
+    manager.load(file);
 
     ui->InputPasswords->setEchoMode(QLineEdit::Password);
 }
@@ -37,7 +41,7 @@ void MainWindow::on_Ensure_clicked()
         QString Tacc=ui->InputAccount->text();
         QString Tpass=ui->InputPasswords->text();
         if(Tacc=="1" && Tpass=="1"){
-            TeacherWindow* teacher=new TeacherWindow();
+            TeacherWindow* teacher=new TeacherWindow(&manager);
             teacher->show();
             this->hide();
         }
@@ -49,7 +53,7 @@ void MainWindow::on_Ensure_clicked()
         QString Sacc=ui->InputAccount->text();
         QString Spass=ui->InputPasswords->text();
         if(Sacc=="1" && Spass=="1"){
-            StudentWindow* student=new StudentWindow();
+            StudentWindow* student=new StudentWindow(&manager);
             student->show();
             this->hide();
         }
